@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>NutriSuggest</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+
+    <script>
+        function getCookie(name) {
+            let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            if (match) {
+                return match[2];
+            }
+            return null;
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const isLoggedIn = getCookie('isLoggedIn');
+            if (isLoggedIn === 'true') {
+                const getStartedButton = document.querySelector('.button-1');
+                if (getStartedButton) {
+                    getStartedButton.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <h1>NutriSuggest<span class="color">.</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#feaut">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#others">Others</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div id="hero-image">
+        <div class="wrapper">
+            <h2><strong>Fueling your Health</strong><br/>
+            One step at a time.</h2>
+            <a href="index.html" class="button-1">Get Started</a>
+        </div>
+    </div>
+
+    <section id="feaut">
+        <div>
+            <section class="cards">
+                <article class="card card--1" id="card-1">
+                    <div class="card__img"></div>
+                    <a href="#" class="card_link">
+                        <div class="card__img--hover"></div>
+                    </a>
+                    <div class="card__info">
+                        <h3 class="card__title">Meal Plan</h3>
+                    </div>
+                </article>
+                <script>
+                    document.addEventListener('DOMContentLoaded', (event) => {
+                        // Get the article element by ID
+                        const cardElement = document.getElementById('card-1');
+
+                        // URL of the Streamlit app
+                        const streamlitAppUrl = 'http://192.168.45.63:8501'; // Replace with your actual Streamlit app URL
+
+                        // Add click event listener to the card element
+                        cardElement.addEventListener('click', () => {
+                            // Redirect to the Streamlit app URL
+                            window.location.href = streamlitAppUrl;
+                        });
+                    });
+                </script>
+
+                <article class="card card--2" id="card-2">
+                    <div class="card__img"></div>
+                    <a class="card_link">
+                        <div class="card__img--hover"></div>
+                    </a>
+                    <div class="card__info">
+                        <h3 class="card__title">Water Intake</h3>
+                    </div>
+                </article>
+                <script>
+                    document.addEventListener('DOMContentLoaded', (event) => {
+                        // Add click event listener to the "Water Intake" card
+                        const waterIntakeCard = document.getElementById('card-2');
+                        waterIntakeCard.addEventListener('click', () => {
+                            window.location.href = 'mainwater.html';
+                        });
+                    });
+                </script>
+
+                <article class="card card--3" id="card-3">
+                    <div class="card__img"></div>
+                    <a href="#" class="card_link">
+                        <div class="card__img--hover"></div>
+                    </a>
+                    <div class="card__info">
+                        <h3 class="card__title">Workout Plans</h3>
+                    </div>
+                </article>
+                <script>
+                    document.addEventListener('DOMContentLoaded', (event) => {
+                        // Add click event listener to the "Workout Plans" card
+                        const workoutPlansCard = document.getElementById('card-3');
+                        workoutPlansCard.addEventListener('click', () => {
+                            window.location.href = 'workout.html';
+                        });
+                    });
+                </script>
+                <article class="card card--4" id="card-4">
+                    <div class="card__img"></div>
+                    <a href="#" class="card_link">
+                        <div class="card__img--hover"></div>
+                    </a>
+                    <div class="card__info">
+                        <h3 class="card__title">Health Bot</h3>
+                    </div>
+                </article>
+                <script>
+                    document.addEventListener('DOMContentLoaded', (event) => {
+                        // Add click event listener to the "Workout Plans" card
+                        const chatbott = document.getElementById('card-4');
+                        chatbott.addEventListener('click', () => {
+                            window.location.href = 'chat.html';
+                        });
+                    });
+                </script>
+            </section>
+        </div>
+    </section>
+
+    <section id="about">
+      <div id="primary-content">
+          <div class="wrapper">
+              <article>
+                  <h3 id="feature-title">Featured Content</h3>
+                  <p id="feature-description">Welcome to NutriSuggest, your trusted wellness companion. Discover personalized meal plans, effective weight loss strategies, tailored workout routines, and a treasure trove of healthy recipes. With our gentle reminders, you'll stay hydrated throughout the day. Take the first step towards a healthier you with NutriSuggest.</p>
+  
+                  <div class="new">
+                      <div class="container">
+                          <div class="row full-height justify-content-center">
+                              <div class="col-lg-10 col-xl-8 align-self-center padding-tb">
+                                  <div class="section mx-auto text-center slider-height-padding">
+                                      <input class="checkbox frst" type="radio" id="slide-1" name="slider" checked/>
+                                      <label for="slide-1"></label>
+                                      <input class="checkbox scnd" type="radio" name="slider" id="slider-2"/>
+                                      <label for="slider-2"></label>
+                                      <input class="checkbox thrd" type="radio" name="slider" id="slider-3"/>
+                                      <label for="slider-3"></label>
+                                      <input class="checkbox foth" type="radio" name="slider" id="slider-4"/>
+                                      <label for="slider-4"></label>
+                                      <ul>
+                                          <li>
+                                              <span>Personalized Diet Plans</span>
+                                          </li>
+                                          <li>
+                                              <span>Delicious Meal Plans</span>
+                                          </li>
+                                          <li>
+                                              <span>Comprehensive Nutrient Tracking</span>
+                                          </li>
+                                          <li>
+                                              <span>Easy Cooking Instructions</span>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </article>
+          </div>
+      </div>
+  </section>
+  
+  
+      <div id="secondary-content">
+          <div class="wrapper">
+              <article style="background-image: url('file:///C:/Users/Guest01/Downloads/meal2.jpg');">
+                  <div class="overlay">
+                      <h4>Workout Plans</h4>
+                      <p><small>Elevate your fitness journey with NutriSuggest's tailored workout plans. From beginner-friendly routines to advanced challenges, sculpt your body and boost your well-being. Start your transformative workout today!</small></p>
+                      <a href="workout.html" class="more-link">View more</a>
+                  </div>
+              </article>
+              <article style="background-image: url('file:///C:/Users/Guest01/Downloads/meal2.jpg');">
+                <div class="overlay">
+                    <h4>HealthBot</h4>
+                    <p><small>Chat with our health bot for personalized diet plans, meal suggestions, nutrient insights, and calorie tracking. Empower your journey to better health, 24/7.</small></p>
+                    <a href="#" class="more-link">View more</a>
+                </div>
+            </article>
+              <div class="clear"></div>
+          </div>
+      </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const checkboxes = document.querySelectorAll('input[type="radio"][name="slider"]');
+        const title = document.getElementById('feature-title');
+        const description = document.getElementById('feature-description');
+
+        checkboxes.forEach(function (checkbox, index) {
+            checkbox.addEventListener('change', function () {
+                switch (index) {
+                    case 0:
+                        title.textContent = "Personalized Diet Plans";
+                        description.textContent = "Customized diet plans by expert nutritionists, catering to your health goals and dietary needs. Perfect for weight loss, muscle gain, or overall wellness.";
+                        break;
+                    case 1:
+                        title.textContent = "Delicious Meal Plans";
+                        description.textContent = "Explore a variety of flavorful, nutritious recipes that make healthy eating delightful. Each meal plan offers variety, ensuring every meal is a treat.";
+                        break;
+                    case 2:
+                        title.textContent = "Comprehensive Nutrient Tracking";
+                        description.textContent = "Easily monitor your nutrient intake with our advanced tracking tools. Keep track of vitamins, minerals, and macros for a balanced, healthy diet.";
+                        break;
+                    case 3:
+                        title.textContent = "Easy Cooking Instructions";
+                        description.textContent = "Follow step-by-step guides to create healthy meals. Our instructions are designed for all levels, making cooking fun and accessible.";
+                        break;
+                    default:
+                        break;
+                }
+            });
+        });
+    });
+</script>  
+        <div id="cta">
+            <div class="wrapper">
+                <h3>Heard Enough?</h3>
+                <p>Dive into a world of personalized nutrition with NutriSuggest. From customized meal plans to hydration tracking and expert health advice, your journey to well-being begins here. Join us now!</p>
+                <a href="index.html" class="button-2">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+      <section id="others">
+        <div class="wrapper">
+            <div id="footer-info">
+                <p>Copyright 2014 CompanyName. All rights reserved.</p>
+                <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+            </div>
+            <div id="footer-links">
+                <ul>
+                    <li><h5>Company</h5></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Meet The Team</a></li>
+                    <li><a href="#">What We Do</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+      </section>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriSuggest - Workout Plans</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header.hero {
+    position: relative;
+    height: 60vh;
+    background: url('https://images.pexels.com/photos/4429102/pexels-photo-4429102.jpeg') no-repeat center center/cover;
+    background-size: cover;
+    background-color: #ccc; /* Add a background color to see if the element is visible */
+}
+        
+        header.hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+        }
+
+        .workout-programs {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 0;
+        }
+
+        .card {
+            width: 30%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card__img, .card__img--hover {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card__img--hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover .card__img--hover {
+            opacity: 1;
+        }
+
+        .card__info {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .card__title {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        footer .social-media {
+            margin-top: 10px;
+        }
+        
+        footer .social-media a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .workout-item {
+            margin-bottom: 20px;
+        }
+
+        .workout-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .workout-item h4 {
+            margin: 10px 0 5px;
+        }
+
+        .workout-item p {
+            margin: 5px 0;
+        }
+
+        .workout-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .workout-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="overlay">
+            <h1>EITHER YOU RUN THE DAY OR THE DAY RUNS YOU</h1>
+        </div>
+    </header>
+
+    <section class="stats">
+        
+    </section>
+
+    <section class="workout-programs">
+        <article class="card card--2" id="card-1">
+            <div class="card__img" style="background-image: url('https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
+            <a href="#" class="card_link">
+                <div class="card__img--hover" style="background-image: url('https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
+            </a>
+            <div class="card__info">
+                <h3 class="card__title">Full Body Workout</h3>
+                <p>Experience a complete workout that targets all muscle groups for optimal fitness.</p>
+            </div>
+        </article>
+
+        <article class="card card--2" id="card-2">
+            <div class="card__img" style="background-image: url('https://images.pexels.com/photos/1199590/pexels-photo-1199590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
+            <a href="#" class="card_link">
+                <div class="card__img--hover" style="background-image: url('https://images.pexels.com/photos/1199590/pexels-photo-1199590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
+            </a>
+            <div class="card__info">
+                <h3 class="card__title">Cardio Workout</h3>
+                <p>Boost your heart health and endurance with our intensive cardio sessions.</p>
+            </div>
+        </article>
+
+        <article class="card card--2" id="card-3">
+            <div class="card__img" style="background-image: url('https://images.pexels.com/photos/371049/pexels-photo-371049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
+            <a href="#" class="card_link">
+                <div class="card__img--hover" style="background-image: url('https://images.pexels.com/photos/371049/pexels-photo-371049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
+            </a>
+            <div class="card__info">
+                <h3 class="card__title">Lower Body Workout</h3>
+                <p>Strengthen your legs and glutes with focused lower body exercises.</p>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 NutriSuggest. All Rights Reserved.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for workout details -->
+    <div id="workoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="workoutDetails">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for handling modal and dynamic content loading
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('workoutModal');
+            const closeBtn = document.querySelector('.close');
+            const workoutDetails = document.getElementById('workoutDetails');
+
+            const workouts = {
+                'card-1': {
+                    title: 'Full Body Workout',
+                    plans: [
+                        {
+                            title: 'Plan 1: Beginner Full Body',
+                            description: 'A beginner-friendly full-body workout plan.',
+                            image: 'beginner-full-body.jpg',
+                            youtube: 'https://www.youtube.com/watch?v=dXYx8rRDKM8'
+                        },
+                        {
+                            title: 'Plan 2: Intermediate Full Body',
+                            description: 'An intermediate full-body workout plan for enhanced fitness.',
+                            image: 'intermediate-full-body.jpg',
+                            youtube: 'https://www.youtube.com/watch?v=ZyXz7GTud6E'
+                        },
+                        {
+                            title: 'Plan 3: Advanced Full Body',
+                            description: 'An advanced full-body workout plan for experienced individuals.',
+                            image: 'advanced-full-body.jpg',
+                            youtube: 'https://www.youtube.com/watch?v=wTz_1mbFj8Y'
+                        }
+                    ]
+                },
+                'card-2': {
+                    title: 'Cardio Workout',
+                    plans: [
+                        {
+                            title: 'Plan 1: Beginner Cardio',
+                            description: 'A beginner-friendly cardio workout plan.',
+                            image: 'beginner-cardio.jpg',
+                            youtube: 'https://www.youtube.com/watch?v=3AoAkRPQd2A'
+                        },
+                        {
+                            title: 'Plan 2: Intermediate Cardio',
+                            description: 'An intermediate cardio workout plan to boost endurance.',
+                            image: 'intermediate-cardio.jpg',
+                            youtube: 'https://www.youtube.com/watch?v=RQ8gkbsmIQQ'
+                        },
+                        {
+                            title: 'Plan 3: Advanced Cardio',
+                            description: 'An advanced cardio workout plan for high-intensity training.',
+                            image: 'advanced-cardio.jpg',
+                            youtube: 'https://www.youtube.com/watch?v=Rjc7xZ16av4'
+                        }
+                    ]
+                },
+                'card-3': {
+                    title: 'Lower Body Workout',
+                    plans: [
+                        {
+                            title: 'Plan 1: Beginner Lower Body',
+                            description: 'A beginner-friendly lower body workout plan.',
+                            image: 'beginner-lower-body.jpg',
+                            youtube: 'https://www.youtube.com/watch?v=3D7bzR_rtsA'
+                        },
+                        {
+                            title: 'Plan 2: Intermediate Lower Body',
+                            description: 'An intermediate lower body workout plan for stronger legs and glutes.',
+                            image: 'intermediate-lower-body.jpg',
+                            youtube: 'https://www.youtube.com/watch?v=W2eU13p62aY'
+                        },
+                        {
+                            title: 'Plan 3: Advanced Lower Body',
+                            description: 'An advanced lower body workout plan for experienced individuals.',
+                            image: 'advanced-lower-body.jpg',
+                            youtube: 'https://www.youtube.com/watch?v=7z-wf6S6GsM'
+                        }
+                    ]
+                }
+            };
+
+            document.querySelectorAll('.card_link').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const cardId = card.closest('.card').id;
+                    const workout = workouts[cardId];
+                    workoutDetails.innerHTML = `
+                        <h2>${workout.title}</h2>
+                        ${workout.plans.map(plan => `
+                            <div class="workout-item">
+                                <h4>${plan.title}</h4>
+                                <img src="${plan.image}" alt="${plan.title}">
+                                <p>${plan.description}</p>
+                                <a href="${plan.youtube}" target="_blank">Watch on YouTube</a>
+                            </div>
+                        `).join('')}
+                    `;
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
