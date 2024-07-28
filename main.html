@@ -45,7 +45,7 @@
             </nav>
         </div>
     </header>
-    
+
     <div id="hero-image">
         <div class="wrapper">
             <h2><strong>Fueling your Health</strong><br/>
@@ -72,7 +72,7 @@
                         const cardElement = document.getElementById('card-1');
 
                         // URL of the Streamlit app
-                        const streamlitAppUrl = 'http://192.168.45.63:8501'; // Replace with your actual Streamlit app URL
+                        const streamlitAppUrl = 'https://meal-planner-with-python-and-ml-jchgcjt4j5npprqih4zw7d.streamlit.app/'; // Replace with your actual Streamlit app URL
 
                         // Add click event listener to the card element
                         cardElement.addEventListener('click', () => {
@@ -95,8 +95,12 @@
                     document.addEventListener('DOMContentLoaded', (event) => {
                         // Add click event listener to the "Water Intake" card
                         const waterIntakeCard = document.getElementById('card-2');
+                        const streamlit1AppUrl = 'https://nikhath.pythonanywhere.com/'; // Replace with your actual Streamlit app URL
+
+                        // Add click event listener to the card element
                         waterIntakeCard.addEventListener('click', () => {
-                            window.location.href = 'mainwater.html';
+                            // Redirect to the Streamlit app URL
+                            window.location.href = streamlit1AppUrl;
                         });
                     });
                 </script>
@@ -132,8 +136,12 @@
                     document.addEventListener('DOMContentLoaded', (event) => {
                         // Add click event listener to the "Workout Plans" card
                         const chatbott = document.getElementById('card-4');
+                        const streamlit2AppUrl = 'https://chatbot-1ih8olmqf2t.streamlit.app/'; // Replace with your actual Streamlit app URL
+
+                        // Add click event listener to the card element
                         chatbott.addEventListener('click', () => {
-                            window.location.href = 'chat.html';
+                            // Redirect to the Streamlit app URL
+                            window.location.href = streamlit2AppUrl;
                         });
                     });
                 </script>
@@ -147,7 +155,7 @@
               <article>
                   <h3 id="feature-title">Featured Content</h3>
                   <p id="feature-description">Welcome to NutriSuggest, your trusted wellness companion. Discover personalized meal plans, effective weight loss strategies, tailored workout routines, and a treasure trove of healthy recipes. With our gentle reminders, you'll stay hydrated throughout the day. Take the first step towards a healthier you with NutriSuggest.</p>
-  
+
                   <div class="new">
                       <div class="container">
                           <div class="row full-height justify-content-center">
@@ -184,8 +192,8 @@
           </div>
       </div>
   </section>
-  
-  
+
+
       <div id="secondary-content">
           <div class="wrapper">
               <article style="background-image: url('file:///C:/Users/Guest01/Downloads/meal2.jpg');">
@@ -236,7 +244,7 @@
             });
         });
     });
-</script>  
+</script>
         <div id="cta">
             <div class="wrapper">
                 <h3>Heard Enough?</h3>
